@@ -1,1 +1,1 @@
-### this is front of marriage invitation
+### this is front of wedding invitation
