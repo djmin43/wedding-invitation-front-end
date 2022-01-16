@@ -10,6 +10,15 @@ const Main = () => {
 
   return (
     <MainSection>
+      <ImageWrapper>
+        <Image 
+          src="https://mindongjoon.blob.core.windows.net/general/hj-pic.jpeg"
+          alt="hj pic" 
+          layout="intrinsic"
+          width={480}
+          height={700}
+        />
+      </ImageWrapper>
       <section className="location">
         <h2>결혼식 기본정보</h2>
         <p>2022년 3월 26일 낮 12시</p>
@@ -23,8 +32,6 @@ const Main = () => {
       <section className="letter">
         <p>어느덧 많은 분들의 보살핌 안에서 자라 좋은 소식을 전하게 되었습니다. 서로 아끼고 배려하는 마음으로 받은 사랑 나무며 예쁘게 살겠습니다. 격려와 응원의 마음으로 함께 기뻐해주세요. 감사합니다.</p>
       </section>
-
-   
     </MainSection>
   )
 }
@@ -41,8 +48,12 @@ const MainSection = styled.section`
   align-items: center;
   flex-direction: column;
   text-align: center;
-  height: 100vh;
-  width: 100vw;
+`
+
+const ImageWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 export default Main
