@@ -10,14 +10,6 @@ const Home: NextPage = () => {
     console.log('hello world')
   }, [])
 
-  const getResult = async () => {
-    const result = await axios.get('http://localhost:80/all')
-    console.log(result, 'get result')
-    return result
-  }
-
-  getResult()
-
   return (
    <Layout>
      <Main />
