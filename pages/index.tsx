@@ -3,18 +3,30 @@ import Main from '../components/Main'
 import Layout from '../components/layout/Layout'
 import axios from 'axios'
 import React, { useEffect } from 'react'
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from 'react-query'
+
+const queryClient = new QueryClient()
+
 
 const Home: NextPage = () => {
 
-  useEffect(() => {
-    console.log('hello world')
-  }, [])
+
 
   return (
    <Layout>
-     <Main />
+     <QueryClientProvider client={queryClient}>
+      <Main />
+     </QueryClientProvider>
    </Layout>
   )
 }
+
+
 
 export default Home
