@@ -1,12 +1,25 @@
-import React from 'react'
+import React, { useState, useEffect, SetStateAction } from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/css'
 import Image from 'next/image'
 import { useQuery } from 'react-query'
 import axios from 'axios'
+import Blog from './Blog'
+
+type BlogType = {
+  id: number
+  user: string
+  blog: string
+}
 
 const Main = () => {
-  const { data, status } = useQuery("blog", fetchBlogList);
+  const { data, status } = useQuery<SetStateAction<BlogType[]>>("blog", fetchBlogList)
+
+  const [blog, setBlog] = useState<BlogType[]>([])
+
+  useEffect(() => {
+    setBlog(data)
+  }, [data])
 
   return (
     <MainSection>
@@ -29,15 +42,16 @@ const Main = () => {
         <p>김민숙 의 장남 한종윤</p>
         <p>이재헌 김민수 의 장녀 이혜진</p>
       </section>
-      <section className="letter">
+      <section className={letterStyle}>
         <p>어느덧 많은 분들의 보살핌 안에서 자라 좋은 소식을 전하게 되었습니다. 서로 아끼고 배려하는 마음으로 받은 사랑 나무며 예쁘게 살겠습니다. 격려와 응원의 마음으로 함께 기뻐해주세요. 감사합니다.</p>
       </section>
+      <Blog />
     </MainSection>
   )
 }
 
-const fetchBlogList = async () => {
-  const result = await axios.get("http://localhost:80/all")
+const fetchBlogList: any = async () => {
+  const result = await axios.get<BlogType[]>("http://localhost:80/all")
   console.log(result)
   return result
 };
@@ -48,12 +62,18 @@ const MainSection = styled.section`
   align-items: center;
   flex-direction: column;
   text-align: center;
+  font-size: 1rem;
+  line-height: 0.5rem;
 `
 
 const ImageWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`
+const letterStyle = css`
+  text-align: left;
+  line-height: normal;
 `
 
 export default Main
