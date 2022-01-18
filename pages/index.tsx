@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
-import Main from '../components/Main'
+import Landing from '../components/Landing'
 import Layout from '../components/layout/Layout'
-import axios from 'axios'
 import React from 'react'
 import {
   QueryClient,
@@ -15,7 +14,7 @@ const Home: NextPage = () => {
   return (
    <Layout>
      <QueryClientProvider client={queryClient}>
-      <Main />
+      <Landing />
      </QueryClientProvider>
    </Layout>
   )
