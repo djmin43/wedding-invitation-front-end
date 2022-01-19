@@ -7,6 +7,7 @@ const App = () => {
     <Head>
       <title>한종윤 결혼식</title>
       <meta property="og:image" content="https://mindongjoon.blob.core.windows.net/general/hj-pic.jpeg" key="hj-image" />
+      <meta property="og:description" content="친구들 내 결혼식 올래?" key="invitation" />
     </Head>
     <Header>
       <p>한종윤</p>
