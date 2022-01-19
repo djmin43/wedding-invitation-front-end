@@ -1,9 +1,8 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { css } from '@emotion/css'
 import Image from 'next/image'
 
-const Main = () => {
+const MainImage = () => {
 
   return (
     <ImageWrapper>
@@ -27,4 +26,4 @@ const ImageWrapper = styled.div`
 `
 
 
-export default Main
+export default MainImage

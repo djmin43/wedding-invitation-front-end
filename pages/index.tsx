@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import Landing from '../components/Landing'
+import App from '../components/App'
 import Layout from '../components/layout/Layout'
 import React from 'react'
 import {
@@ -12,11 +12,11 @@ const queryClient = new QueryClient()
 const Home: NextPage = () => {
 
   return (
-   <Layout>
-     <QueryClientProvider client={queryClient}>
-      <Landing />
-     </QueryClientProvider>
-   </Layout>
+    <Layout>
+      <QueryClientProvider client={queryClient}>
+        <App />
+      </QueryClientProvider>
+    </Layout>
   )
 }
 
