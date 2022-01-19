@@ -1,21 +1,19 @@
-import React, { ReactNode } from 'react'
-import Header from './Header'
-import Footer from './Footer'
+import React, { ReactNode } from 'react';
+import Header from './Header';
+import Footer from './Footer';
 
 interface Props {
-  children: ReactNode
+  children: ReactNode;
 }
 
-const Layout = ({children}: Props) => {
+const Layout = ({ children }: Props) => {
   return (
     <div>
       <Header />
-        <main>
-          {children}
-        </main>
+      <main>{children}</main>
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
