@@ -1,40 +1,41 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap'); */
 
 @font-face {
-  font-family: 'maruburi';
+  font-family: 'Maruburi';
   font-weight: '700';
-  src: url('/fonts/MaruBuriOTF/MaruBuri-Bold.ttf');
+  src: url('/fonts/MaruBuriTTF/MaruBuri-Bold.ttf');
 }
 
 @font-face {
-  font-family: 'maruburi';
+  font-family: 'Maruburi';
   font-weight: '600';
-  src: url('/fonts/MaruBuriOTF/MaruBuri-SemiBold.ttf');
+  src: url('/fonts/MaruBuriTTF/MaruBuri-SemiBold.ttf');
 }
 
 @font-face {
-  font-family: 'maruburi';
+  font-family: 'Maruburi';
   font-weight: '400';
-  src: url('/fonts/MaruBuriOTF/MaruBuri-Regular.ttf');
+  src: url('/fonts/MaruBuriTTF/MaruBuri-Regular.ttf');
 }
 
 @font-face {
-  font-family: 'maruburi';
+  font-family: 'Maruburi';
   font-weight: '300';
-  src: url('/fonts/MaruBuriOTF/MaruBuri-Light.ttf');
+  src: url('/fonts/MaruBuriTTF/MaruBuri-Light.ttf');
 }
 
 @font-face {
-  font-family: 'maruburi';
+  font-family: 'Maruburi';
   font-weight: '200';
-  src: url('/fonts/MaruBuriOTF/MaruBuri-ExtraLight.ttf');
+  src: url('/fonts/MaruBuriTTF/MaruBuri-ExtraLight.ttf');
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'maruburi', serif;
+  font-family: 'Maruburi';
+  background-color: #fffef2;
 }
 
 a {

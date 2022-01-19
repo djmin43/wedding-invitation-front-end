@@ -30,6 +30,7 @@ const LetterWrapper = styled.section`
   text-align: center;
   font-size: 1rem;
   line-height: 0.5rem;
+  font-family: 'Maruburi';
 `
 
 
