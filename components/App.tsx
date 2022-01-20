@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled'
 import Head from 'next/head'
+import MainImage from './MainImage'
 
 const App = () => {
   return <Main>
@@ -11,11 +12,16 @@ const App = () => {
     <Head>
       <meta property="og:description" content="친구들 내 결혼식 올래?" key="invitation" />
     </Head>
-    <Header>
+    <Header id="top">
       <p>한종윤</p>
       <p>이혜진</p>
       <p>이우혁</p>
     </Header>
+    <LocationAndTime>
+      <p>2022년 3월 26일 토요일 오후 12시</p>
+      <p>대한성공회 서울주교좌성당</p>
+    </LocationAndTime>
+    <MainImage />
   </Main>;
 };
 
@@ -23,6 +29,8 @@ const Main = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  padding: 1rem;
 `
 
 const Header = styled.header`
@@ -32,6 +40,12 @@ const Header = styled.header`
   font-weight: 700;
 `
 
+const LocationAndTime = styled.section`
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 0;
+  margin-right: auto;
+`
 
 
 export default App;

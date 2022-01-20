@@ -6,9 +6,9 @@ const MainImage = () => {
 
   return (
     <ImageWrapper>
-      <Image 
+      <Image
         src="https://mindongjoon.blob.core.windows.net/general/hj-pic.jpeg"
-        alt="hj pic" 
+        alt="hj pic"
         layout="intrinsic"
         width={480}
         height={700}
@@ -19,7 +19,6 @@ const MainImage = () => {
 
 
 const ImageWrapper = styled.div`
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
