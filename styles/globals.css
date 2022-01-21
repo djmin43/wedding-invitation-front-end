@@ -41,6 +41,7 @@ body {
   margin: 0;
   font-family: 'Maruburi', 'Roboto';
   background-color: #fffef2;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -51,3 +52,4 @@ a {
 * {
   box-sizing: border-box;
 }
+

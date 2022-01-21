@@ -1,20 +1,20 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-const Header = () => {
+const Navigation = () => {
   return (
     <header>
-      <Navigation>
+      <NavigationContainer>
         <span>Home</span>
         <span>Photo</span>
         <span>Map</span>
         <span>Message</span>
-      </Navigation>
+      </NavigationContainer>
     </header>
   )
 }
 
-const Navigation = styled.nav`
+const NavigationContainer = styled.nav`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -26,4 +26,4 @@ const Navigation = styled.nav`
 
 `
 
-export default Header
+export default Navigation
