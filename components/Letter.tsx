@@ -1,42 +1,47 @@
-import React from 'react'
+import React from 'react';
 import styled from '@emotion/styled'
-import { css } from '@emotion/css'
 
 const Letter = () => {
-  return (
-    <LetterWrapper>
-      <article className={letterStyle}>
-        <p>어느덧 많은 분들의 보살핌 안에서 자라 좋은 소식을 전하게 되었습니다. 서로 아끼고 배려하는 마음으로 받은 사랑 나누  며 예쁘게 살겠습니다. 격려와 응원의 마음으로 함께 기뻐해주세요. 감사합니다.</p>
-      </article>
-      <article className="location">
-        <h2>결혼식 기본정보</h2>
-        <p>2022년 3월 26일 낮 12시</p>
-        <p>대한성공회 서울대성당</p>
-        <p>서울특별시 중구 세종대로21길 15</p>
-      </article>
-      <article className="players">
-        <p>김민숙 의 장남 한종윤</p>
-        <p>이재헌 김민수 의 장녀 이혜진</p>
-      </article>
-    </LetterWrapper>
-  )
-}
+  return <>
+    <Message>
+      <p>어느덧</p>
+      <p>많은 분들의 보살핌 안에서 자라</p>
+      <p>좋은 소식을</p>
+      <p>전하게 되었습니다.</p>
+      <p>서로 아끼고 배려하는 마음으로</p>
+      <p>받은 사랑 나누며</p>
+      <p>예쁘게 살겠습니다.</p>
+      <p>격려와 응원의 마음으로</p>
+      <p>함께 기뻐해주세요.</p>
+      <p>감사합니다.</p>
+    </Message>
+    <NameWrapper>
+      <span>김민숙</span>
+      <span>의 장남 한종윤</span>
+      <span>이재헌 김민수</span>
+      <span>의 장녀 이혜진</span>
+    </NameWrapper>
+  </>;
+};
 
-const LetterWrapper = styled.section`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+
+const Message = styled.article`
   text-align: center;
-  font-size: 1rem;
   line-height: 0.5rem;
+  font-weight: 500;
+  margin: 1rem 0;
+  & > p:last-of-type {
+    margin-top: 3rem;
+  }
 `
 
-
-const letterStyle = css`
-  text-align: left;
-  line-height: normal;
-  padding: 1rem;
+const NameWrapper = styled.section`
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  & > span:nth-child(odd) {
+    text-align: left;
+  }
 `
 
-export default Letter
+export default Letter;

@@ -1,18 +1,14 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import styled from '@emotion/styled'
 import Head from 'next/head'
 import MainImage from './MainImage'
 import Navigation from './Navigation';
+import Letter from './Letter'
 
-const App = () => {
+const App = () => {  
 
-  const locationRef = useRef<HTMLParagraphElement>(null)
+  const jongyunPhoneNumber = `01071304250`
 
-  function handleBackClick() {
-    if (locationRef.current !== null) {
-      locationRef.current.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
   return <>
     <Head>
       <title>한종윤 결혼식</title>
@@ -21,17 +17,18 @@ const App = () => {
     <Head>
       <meta property="og:description" content="친구들 내 결혼식 올래?" key="invitation" />
     </Head>
-    <Navigation  />
+    <Navigation />
     <Main>
       <Header id="top">
-        <p onClick={handleBackClick}>한종윤</p>
+        <p>한종윤</p>
         <p>이혜진</p>
       </Header>
-      <LocationAndTime >
-        <p >2022년 3월 26일 토요일 오후 12시</p>
-        <p>대한성공회 서울주교좌성당</p>
-      </LocationAndTime>
       <MainImage />
+      <Letter />
+      <CallButtonWrapper>
+        <a href={`tel:[${jongyunPhoneNumber}]`}>신랑측 연락하기</a>
+        <a href="">신부측 연락하기</a>
+      </CallButtonWrapper>
     </Main>
   </>;
 };
@@ -42,22 +39,25 @@ const Main = styled.main`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 1rem;
+  padding: 0.5rem;
 `
 
 const Header = styled.header`
   margin-right: auto;
-  line-height: 0;
+  line-height: 0.25rem;
   font-size: 2rem;
   font-weight: 700;
 `
 
-const LocationAndTime = styled.section`
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 0;
-  margin-right: auto;
+const CallButtonWrapper = styled.section`
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
 `
+
+
+
 
 
 export default App;
