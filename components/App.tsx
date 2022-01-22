@@ -4,6 +4,7 @@ import Head from 'next/head'
 import MainImage from './MainImage'
 import Letter from './Letter'
 import Link from 'next/link'
+import LocationInformation from './LocationInformation';
 
 const App = () => {  
 
@@ -23,6 +24,7 @@ const App = () => {
         <p>한종윤</p>
         <p>이혜진</p>
       </Header>
+      <LocationInformation />
       <MainImage />
       <Letter />
       <CallButtonWrapper>
