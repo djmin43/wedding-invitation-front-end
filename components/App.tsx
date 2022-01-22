@@ -5,6 +5,14 @@ import MainImage from './MainImage'
 import Navigation from './Navigation';
 
 const App = () => {
+
+  const locationRef = useRef<HTMLParagraphElement>(null)
+
+  function handleBackClick() {
+    if (locationRef.current !== null) {
+      locationRef.current.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
   return <>
     <Head>
       <title>한종윤 결혼식</title>
@@ -13,21 +21,21 @@ const App = () => {
     <Head>
       <meta property="og:description" content="친구들 내 결혼식 올래?" key="invitation" />
     </Head>
-    <Navigation />
+    <Navigation  />
     <Main>
       <Header id="top">
-        <p>한종윤</p>
+        <p onClick={handleBackClick}>한종윤</p>
         <p>이혜진</p>
-        <p>이우혁</p>
       </Header>
-      <LocationAndTime>
-        <p>2022년 3월 26일 토요일 오후 12시</p>
+      <LocationAndTime >
+        <p >2022년 3월 26일 토요일 오후 12시</p>
         <p>대한성공회 서울주교좌성당</p>
       </LocationAndTime>
       <MainImage />
     </Main>
   </>;
 };
+
 
 const Main = styled.main`
   display: flex;
