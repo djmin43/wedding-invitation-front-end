@@ -2,12 +2,13 @@ import React from 'react';
 import styled from '@emotion/styled'
 import Head from 'next/head'
 import MainImage from './MainImage'
-import Navigation from './Navigation';
 import Letter from './Letter'
+import Link from 'next/link'
 
 const App = () => {  
 
-  const jongyunPhoneNumber = `01071304250`
+  const jongyunPhoneNumber = '01071304250'
+  const haejinPhoneNumber = '01095561185'
 
   return <>
     <Head>
@@ -17,7 +18,6 @@ const App = () => {
     <Head>
       <meta property="og:description" content="친구들 내 결혼식 올래?" key="invitation" />
     </Head>
-    <Navigation />
     <Main>
       <Header id="top">
         <p>한종윤</p>
@@ -26,8 +26,12 @@ const App = () => {
       <MainImage />
       <Letter />
       <CallButtonWrapper>
-        <a href={`tel:[${jongyunPhoneNumber}]`}>신랑측 연락하기</a>
-        <a href="">신부측 연락하기</a>
+        <div>
+          <Link href={`tel:${jongyunPhoneNumber}`}>신랑측 연락하기</Link>
+        </div>
+        <div>
+          <Link href={`tel:${haejinPhoneNumber}`}>신부측 연락하기</Link>
+        </div>
       </CallButtonWrapper>
     </Main>
   </>;
@@ -52,8 +56,14 @@ const Header = styled.header`
 const CallButtonWrapper = styled.section`
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   margin-top: 1rem;
+  & > div {
+    padding: 0.25rem;
+    border: 2px black solid;
+    border-radius: 4px;
+
+  }
 `
 
 
