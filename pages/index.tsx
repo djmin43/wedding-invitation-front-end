@@ -3,26 +3,21 @@ import React from 'react'
 import { BlogType, blogList } from '../data/dummyBlogData'
 
 type HomePageProps = {
-  blogProps: BlogType[]
+  blogs: BlogType[]
 }
 
-const Home = ({ blogProps }: HomePageProps) => {
-
-  return (
-    <App blogProps={blogProps} />
-  )
+const Home = ({ blogs }: HomePageProps) => {
+  return <App blogs={blogs} />
 }
 
 export async function getStaticProps() {
-
-  const blogProps = blogList
+  const blogs = blogList
 
   return {
     props: {
-      blogProps
+      blogs,
     },
   }
 }
-
 
 export default Home

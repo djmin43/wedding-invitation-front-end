@@ -1,10 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
+import BlogCard from './BlogCard'
+import { BlogType } from '../../data/dummyBlogData'
+import * as S from '../../styles/global-styled'
 
-const BlogMain = () => {
+type BlogMainProps = {
+  blogs: BlogType[]
+}
 
-  return <div>
-    hello
-  </div>;
-};
+const BlogMain = ({ blogs }: BlogMainProps) => {
+  const [blogList, setBlogList] = useState<BlogType[]>(blogs)
 
-export default BlogMain;
+  return (
+    <S.PageContainer>
+      {blogList.map((blog: BlogType) => (
+        <div key={blog.id}>
+          <BlogCard blog={blog} />
+        </div>
+      ))}
+    </S.PageContainer>
+  )
+}
+
+export default BlogMain

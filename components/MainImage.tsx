@@ -3,7 +3,6 @@ import styled from '@emotion/styled'
 import Image from 'next/image'
 
 const MainImage = () => {
-
   return (
     <ImageWrapper>
       <Image
@@ -17,12 +16,10 @@ const MainImage = () => {
   )
 }
 
-
 const ImageWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
 `
-
 
 export default MainImage
