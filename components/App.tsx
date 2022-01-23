@@ -5,11 +5,19 @@ import MainImage from './MainImage'
 import Letter from './Letter'
 import Link from 'next/link'
 import LocationInformation from './LocationInformation';
+import { BlogType } from '../data/dummyBlogData'
 
-const App = () => {  
+type AppProps = {
+  blogProps: BlogType[]
+}
+
+
+const App = ({ blogProps }: AppProps) => {  
 
   const jongyunPhoneNumber = '01071304250'
   const haejinPhoneNumber = '01095561185'
+
+  console.log(blogProps)
 
   return <>
     <Head>
@@ -19,23 +27,23 @@ const App = () => {
     <Head>
       <meta property="og:description" content="친구들 내 결혼식 올래?" key="invitation" />
     </Head>
-    <Main>
-      <Header id="top">
+    <S.Main>
+      <S.Header id="top">
         <p>한종윤</p>
         <p>이혜진</p>
-      </Header>
+      </S.Header>
       <LocationInformation />
       <MainImage />
       <Letter />
-      <CallButtonWrapper>
+      <S.CallButtons>
         <div>
           <Link href={`tel:${jongyunPhoneNumber}`}>신랑측 연락하기</Link>
         </div>
         <div>
           <Link href={`tel:${haejinPhoneNumber}`}>신부측 연락하기</Link>
         </div>
-      </CallButtonWrapper>
-    </Main>
+      </S.CallButtons>
+    </S.Main>
   </>;
 };
 
@@ -55,7 +63,7 @@ const Header = styled.header`
   font-weight: 700;
 `
 
-const CallButtonWrapper = styled.section`
+const CallButtons = styled.section`
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -68,6 +76,11 @@ const CallButtonWrapper = styled.section`
   }
 `
 
+const S = {
+  Main,
+  Header,
+  CallButtons
+}
 
 
 

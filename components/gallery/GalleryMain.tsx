@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image'
 import styled from '@emotion/styled'
 
-const Gallery = () => {
+const GalleryMain = () => {
   return     <ImageWrapper>
     <h1>갤러리</h1>
     <Image
@@ -16,7 +16,7 @@ const Gallery = () => {
   </ImageWrapper>;
 };
 
-export default Gallery;
+export default GalleryMain;
 
 const ImageWrapper = styled.div`
   display: flex;

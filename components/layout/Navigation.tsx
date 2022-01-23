@@ -24,7 +24,7 @@ const Navigation = () => {
           <span onClick={() => handleRouter('/map')}>Map</span>
         </div>
         <div>
-          <span onClick={() => handleRouter('/message')}>Message</span>
+          <span onClick={() => handleRouter('/blog')}>Message</span>
 
         </div>
       </NavigationContainer>
