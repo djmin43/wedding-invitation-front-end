@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
+import { palette } from '../../styles/globalTheme'
 
 
 const Navigation = () => {
@@ -18,14 +19,13 @@ const Navigation = () => {
           <span onClick={() => handleRouter('/')}>Home</span>
         </div>
         <div>
-          <span onClick={() => handleRouter('/gallery')}>Photo</span>
+          <span onClick={() => handleRouter('/#buttons')}>Photo</span>
         </div>
         <div>
           <span onClick={() => handleRouter('/map')}>Map</span>
         </div>
         <div>
           <span onClick={() => handleRouter('/blog')}>Message</span>
-
         </div>
       </NavigationContainer>
     </header>
@@ -40,8 +40,7 @@ const NavigationContainer = styled.nav`
   width: 100%;
   height: 8vh;
   background-color: #121858;
-  color: #fffef2;
-
+  color: ${palette.page};
 `
 
 export default Navigation

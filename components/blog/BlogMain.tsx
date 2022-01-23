@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { BlogType } from '../../data/dummyBlogData'
-
 
 const BlogMain = () => {
 
