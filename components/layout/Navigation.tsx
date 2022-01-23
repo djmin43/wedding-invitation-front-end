@@ -1,6 +1,6 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import * as S from '../../styles/global-styled/'
+import * as s from '../../styles/global-styled/'
 
 const Navigation = () => {
   const router = useRouter()
@@ -11,7 +11,7 @@ const Navigation = () => {
 
   return (
     <header>
-      <S.NavigationContainer>
+      <s.NavigationContainer>
         <div>
           <span onClick={() => handleRouter('/')}>Home</span>
         </div>
@@ -24,7 +24,7 @@ const Navigation = () => {
         <div>
           <span onClick={() => handleRouter('/blog')}>Message</span>
         </div>
-      </S.NavigationContainer>
+      </s.NavigationContainer>
     </header>
   )
 }
