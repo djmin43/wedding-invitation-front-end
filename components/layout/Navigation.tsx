@@ -1,6 +1,7 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import * as s from '../../styles/global-styled/'
+import * as S from '../../styles/global-styled/'
+import { css } from '@emotion/css'
 
 const Navigation = () => {
   const router = useRouter()
@@ -11,7 +12,7 @@ const Navigation = () => {
 
   return (
     <header>
-      <s.NavigationContainer>
+      <S.NavigationContainer className={navigationStyle}>
         <div>
           <span onClick={() => handleRouter('/')}>Home</span>
         </div>
@@ -24,9 +25,13 @@ const Navigation = () => {
         <div>
           <span onClick={() => handleRouter('/blog')}>Message</span>
         </div>
-      </s.NavigationContainer>
+      </S.NavigationContainer>
     </header>
   )
 }
+
+const navigationStyle = css`
+  color: black;
+`
 
 export default Navigation
