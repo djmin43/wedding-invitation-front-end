@@ -3,8 +3,8 @@ import styled from '@emotion/styled'
 
 const Letter = () => {
   return (
-    <LetterWrapper>
-      <Message>
+    <S.LetterWrapper>
+      <S.Message>
         <p>어느덧</p>
         <p>많은 분들의 보살핌 안에서 자라</p>
         <p>좋은 소식을</p>
@@ -15,14 +15,14 @@ const Letter = () => {
         <p>격려와 응원의 마음으로</p>
         <p>함께 기뻐해주세요.</p>
         <p>감사합니다.</p>
-      </Message>
-      <NameWrapper>
+      </S.Message>
+      <S.NameWrapper>
         <span>김민숙</span>
         <span>의 장남 한종윤</span>
         <span>이재헌 김민수</span>
         <span>의 장녀 이혜진</span>
-      </NameWrapper>
-    </LetterWrapper>
+      </S.NameWrapper>
+    </S.LetterWrapper>
   )
 }
 
@@ -51,5 +51,11 @@ const NameWrapper = styled.section`
     text-align: left;
   }
 `
+
+const S = {
+  NameWrapper,
+  LetterWrapper,
+  Message
+}
 
 export default Letter
