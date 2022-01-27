@@ -61,3 +61,14 @@ export const NavigationContainer = styled.nav`
   background-color: #121858;
   color: ${palette.background.light};
 `
+
+export const PageHeader = styled.h3`
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 0;
+`
+
+export const CardWrapper = styled.div`
+  text-align: center;
+`
