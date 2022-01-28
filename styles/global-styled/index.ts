@@ -27,6 +27,7 @@ export const PageContainer = styled.div`
   padding: 0.5rem;
   margin: 0.5rem 0;
   width: 100%;
+
 `
 
 export const IntroHeader = styled.header`

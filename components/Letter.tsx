@@ -47,7 +47,7 @@ const NameWrapper = styled.section`
   grid-template-columns: 1fr 1fr;
   margin: auto;
   width: 100%;
-  & > span:nth-child(odd) {
+  & > span:nth-of-type(odd) {
     text-align: left;
   }
 `

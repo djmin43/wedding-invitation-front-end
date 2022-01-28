@@ -7,7 +7,11 @@ type BlogCardProps = {
 }
 
 const BlogCard = ({ blog }: BlogCardProps) => {
-  return <S.CardWrapper>{blog.body}</S.CardWrapper>
+  return <S.CardWrapper>
+    <span>{blog.name}</span>
+    <span>{blog.createdAt} </span>
+    <p>{blog.body}</p>
+  </S.CardWrapper>
 }
 
 export default BlogCard
