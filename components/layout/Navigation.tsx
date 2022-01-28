@@ -12,26 +12,22 @@ const Navigation = () => {
 
   return (
     <header>
-      <S.NavigationContainer className={navigationStyle}>
+      <S.NavigationContainer>
         <div>
           <span onClick={() => handleRouter('/')}>Home</span>
         </div>
         <div>
-          <span onClick={() => handleRouter('/#buttons')}>Photo</span>
+          <span onClick={() => handleRouter('/')}>Photo</span>
         </div>
         <div>
-          <span onClick={() => handleRouter('/map')}>Map</span>
+          <span onClick={() => handleRouter('/')}>Map</span>
         </div>
         <div>
-          <span onClick={() => handleRouter('/blog')}>Message</span>
+          <span onClick={() => handleRouter('/')}>Message</span>
         </div>
       </S.NavigationContainer>
     </header>
   )
 }
-
-const navigationStyle = css`
-  color: black;
-`
 
 export default Navigation
