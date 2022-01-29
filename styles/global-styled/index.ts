@@ -33,7 +33,7 @@ export const CallButtons = styled.section`
 export const PageContainer = styled.div`
   box-shadow: ${palette.boxshadow};
   background-color: ${palette.page};
-  padding: 0.5rem 0;
+  padding: 0.5rem;
   margin: 0.5rem 0;
   width: 100%;
 `
@@ -97,9 +97,10 @@ type AvatarStyeldProps = {
 
 export const Avatar = styled.div<AvatarStyeldProps>`
   vertical-align: middle;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
   background-color: ${({ backgroundColor }) => backgroundColor};
   box-shadow: ${palette.boxshadow};
   color: ${palette.page};
@@ -109,4 +110,40 @@ export const Avatar = styled.div<AvatarStyeldProps>`
   align-items: center;
   justify-content: center;
   text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+`
+
+export const NewPostInput = styled.section`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  & > div {
+    margin: 0.25rem 0;
+  }
+  & > .writer-name {
+    & > input,
+    input:focus {
+      width: 100%;
+      border: none;
+      outline: none;
+      box-shadow: ${palette.boxshadow};
+      padding: 0.5rem;
+    }
+  }
+  & > .body {
+    & > textarea,
+    textarea:focus {
+      width: 100%;
+      border: none;
+      outline: none;
+      box-shadow: ${palette.boxshadow};
+    }
+  }
+  & > .submit-button {
+    border: none;
+    box-shadow: ${palette.boxshadow};
+    padding: 0.5rem;
+    font-family: 'Maruburi';
+  }
 `
