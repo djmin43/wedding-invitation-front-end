@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 import { PostType } from '../data/dummyBlogData'
 import Navigation from '../components/layout/Navigation'
-import IntroMain from '../components/intro/IntroMain'
+import IntroMain from './intro/Main'
 import * as S from '../styles/global-styled'
 import PostMain from './blog/Main'
 

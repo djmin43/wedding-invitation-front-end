@@ -5,7 +5,7 @@ import Link from 'next/link'
 import LocationInformation from '../LocationInformation'
 import * as S from '../../styles/global-styled/index'
 
-const IntroMain = () => {
+const Main = () => {
   const jongyunPhoneNumber = '01071304250'
   const haejinPhoneNumber = '01095561185'
 
@@ -19,10 +19,10 @@ const IntroMain = () => {
       <MainImage />
       <Letter />
       <S.CallButtons id="buttons">
-        <div>
+        <div className="call-groom-container">
           <Link href={`tel:${jongyunPhoneNumber}`}>신랑측 연락하기</Link>
         </div>
-        <div>
+        <div className="call-bride-container">
           <Link href={`tel:${haejinPhoneNumber}`}>신부측 연락하기</Link>
         </div>
       </S.CallButtons>
@@ -30,4 +30,4 @@ const IntroMain = () => {
   )
 }
 
-export default IntroMain
+export default Main

@@ -15,10 +15,18 @@ export const CallButtons = styled.section`
   gap: 1rem;
   margin-top: 1rem;
   & > div {
-    padding: 0.5rem;
-    border: 1px ${palette.border} solid;
+    padding: 0.5rem 1rem;
     box-shadow: ${palette.boxshadow};
     border-radius: 4px;
+    font-size: 0.75rem;
+  }
+  & > .call-bride-container {
+    color: ${palette.page};
+    background-color: ${palette.pastel.blue};
+  }
+  & > .call-groom-container {
+    color: ${palette.page};
+    background-color: ${palette.pastel.purple};
   }
 `
 
@@ -84,7 +92,7 @@ export const CardWrapper = styled.div`
 `
 
 type AvatarStyeldProps = {
-  backgroundColor: string
+  backgroundColor: string | null
 }
 
 export const Avatar = styled.div<AvatarStyeldProps>`
