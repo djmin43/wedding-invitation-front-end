@@ -1,7 +1,6 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import * as S from '../../styles/global-styled/'
-import { css } from '@emotion/css'
 
 const Navigation = () => {
   const router = useRouter()
