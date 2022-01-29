@@ -1,5 +1,6 @@
 import React, { ChangeEvent, useState } from 'react'
 import Post from './Post'
+import Form from './Form'
 import { PostType } from '../../data/dummyBlogData'
 import * as S from '../../styles/global-styled'
 import { v4 as uuid } from 'uuid'
@@ -22,57 +23,45 @@ const Main = ({ postList }: BlogMainProps) => {
 
   const addNewCard = () => {
     const newState = [...posts, newPost]
-    validateEmptyForm()
+    if (!validateForm()) {
+      alert('폼을 올바르게 작성해주세요!')
+      return
+    }
     setPosts(newState)
+  }
+
+  function validateForm() {
+    if (
+      newPost.writerName.length > 1 &&
+      newPost.writerName.length < 5 &&
+      newPost.body.length > 10
+    ) {
+      return true
+    }
+    return false
   }
 
   function handlePostInputChange(
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) {
-    const value = e.target.value
-    const name = e.target.name
+    const { value, name } = e.target
     const id: string = uuid()
-    const pastelValues = Object.values(palette.pastel)
-    const newAvatarColor =
-      pastelValues[Math.floor(Math.random() * pastelValues.length)]
-    setNewPost({ ...newPost, id, avatarColor: newAvatarColor, [name]: value })
-  }
-
-  function validateEmptyForm() {
-    if (newPost.writerName.length < 2) {
-      alert('이름을 올바르게 입력해주세요(한글자 노노)')
-    }
-    if (newPost.body.length < 10) {
-      alert('내용을 조금만 더 작성해주세요! (10글자 이상)')
-    }
+    setNewPost({
+      ...newPost,
+      id,
+      avatarColor: randomColorGenerator(),
+      [name]: value,
+    })
   }
 
   return (
     <S.PageContainer>
       <S.PageHeader>축하메세지</S.PageHeader>
-      <S.NewPostInput>
-        <div className="writer-name">
-          <span>이름:</span>
-          <input
-            type="text"
-            value={newPost.writerName}
-            name="writerName"
-            onChange={handlePostInputChange}
-          />
-        </div>
-        <div className="body">
-          <span>축하메세지:</span>
-          <textarea
-            rows={10}
-            value={newPost.body}
-            name="body"
-            onChange={handlePostInputChange}
-          />
-        </div>
-        <button className="submit-button" onClick={() => addNewCard()}>
-          축하메세지 남기기
-        </button>
-      </S.NewPostInput>
+      <Form
+        handlePostInputChange={handlePostInputChange}
+        newPost={newPost}
+        addNewCard={addNewCard}
+      />
       {posts.map((post: PostType) => (
         <div key={post.id}>
           <Post post={post} />
@@ -80,6 +69,11 @@ const Main = ({ postList }: BlogMainProps) => {
       ))}
     </S.PageContainer>
   )
+}
+
+const randomColorGenerator = () => {
+  const pastelValues = Object.values(palette.pastel)
+  return pastelValues[Math.floor(Math.random() * pastelValues.length)]
 }
 
 export default Main

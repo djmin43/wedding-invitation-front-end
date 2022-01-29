@@ -121,6 +121,11 @@ export const NewPostInput = styled.section`
   & > div {
     margin: 0.25rem 0;
   }
+  & > .form-rules {
+    font-size: 0.75rem;
+    line-height: 0.25rem;
+    text-align: center;
+  }
   & > .writer-name {
     & > input,
     input:focus {
@@ -145,5 +150,6 @@ export const NewPostInput = styled.section`
     box-shadow: ${palette.boxshadow};
     padding: 0.5rem;
     font-family: 'Maruburi';
+    color: ${palette.font.main};
   }
 `
