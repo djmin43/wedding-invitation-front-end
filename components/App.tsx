@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
-import { BlogType } from '../data/dummyBlogData'
+import { PostType } from '../data/dummyBlogData'
 import Navigation from '../components/layout/Navigation'
 import IntroMain from '../components/intro/IntroMain'
 import * as S from '../styles/global-styled'
-import BlogMain from './blog/BlogMain'
+import PostMain from './blog/Main'
 
 type AppProps = {
-  blogs: BlogType[]
+  postList: PostType[]
 }
 
-const App = ({ blogs }: AppProps) => {
+const App = ({ postList }: AppProps) => {
   const [showNavBar, setShowNavBar] = useState<boolean>(false)
 
   const handleScroll = () => {
@@ -49,7 +49,7 @@ const App = ({ blogs }: AppProps) => {
       )}
       <S.Main>
         <IntroMain />
-        <BlogMain blogs={blogs} />
+        <PostMain postList={postList} />
       </S.Main>
     </>
   )

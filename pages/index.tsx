@@ -1,21 +1,19 @@
 import App from '../components/App'
 import React from 'react'
-import { BlogType, blogList } from '../data/dummyBlogData'
+import { PostType, postList } from '../data/dummyBlogData'
 
 type HomePageProps = {
-  blogs: BlogType[]
+  postList: PostType[]
 }
 
-const Home = ({ blogs }: HomePageProps) => {
-  return <App blogs={blogs} />
+const Home = ({ postList }: HomePageProps) => {
+  return <App postList={postList} />
 }
 
 export async function getStaticProps() {
-  const blogs = blogList
-
   return {
     props: {
-      blogs,
+      postList,
     },
   }
 }

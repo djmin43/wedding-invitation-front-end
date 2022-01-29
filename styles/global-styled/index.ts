@@ -34,7 +34,7 @@ export const IntroHeader = styled.header`
   margin-right: auto;
   line-height: 0.25rem;
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 500;
 `
 
 export const NavigationWrapper = styled.div`
@@ -66,7 +66,7 @@ export const NavigationContainer = styled.nav`
 export const PageHeader = styled.h3`
   text-align: center;
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 0;
 `
 
@@ -79,6 +79,7 @@ export const CardWrapper = styled.div`
   & > .body {
     font-size: 0.75rem;
     padding: 0.125rem;
+    font-weight: 600;
   }
 `
 
@@ -92,8 +93,10 @@ export const Avatar = styled.div<AvatarStyeldProps>`
   height: 2.5rem;
   border-radius: 50%;
   background-color: ${({ backgroundColor }) => backgroundColor};
+  box-shadow: ${palette.boxshadow};
   color: ${palette.page};
   font-size: 0.75rem;
+  font-weight: 200;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -34,7 +34,7 @@ const LetterWrapper = styled.section`
 const Message = styled.article`
   text-align: center;
   line-height: 0.5rem;
-  font-weight: 500;
+  font-weight: 300;
   margin: 1rem 0;
   & > p:last-of-type {
     margin-top: 3rem;
@@ -55,7 +55,7 @@ const NameWrapper = styled.section`
 const S = {
   NameWrapper,
   LetterWrapper,
-  Message
+  Message,
 }
 
 export default Letter

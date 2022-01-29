@@ -2,35 +2,35 @@
 
 @font-face {
   font-family: 'Maruburi';
-  font-weight: '700';
+  font-weight: 700;
   src: url('/fonts/MaruBuriTTF/MaruBuri-Bold.ttf');
   unicode-range: U+AC00-D7AF;
 }
 
 @font-face {
   font-family: 'Maruburi';
-  font-weight: '600';
+  font-weight: 600;
   src: url('/fonts/MaruBuriTTF/MaruBuri-SemiBold.ttf');
   unicode-range: U+AC00-D7AF;
 }
 
 @font-face {
   font-family: 'Maruburi';
-  font-weight: '400';
+  font-weight: 400;
   src: url('/fonts/MaruBuriTTF/MaruBuri-Regular.ttf');
   unicode-range: U+AC00-D7AF;
 }
 
 @font-face {
   font-family: 'Maruburi';
-  font-weight: '300';
+  font-weight: 300;
   src: url('/fonts/MaruBuriTTF/MaruBuri-Light.ttf');
   unicode-range: U+AC00-D7AF;
 }
 
 @font-face {
   font-family: 'Maruburi';
-  font-weight: '200';
+  font-weight: 200;
   src: url('/fonts/MaruBuriTTF/MaruBuri-ExtraLight.ttf');
   unicode-range: U+AC00-D7AF;
 }

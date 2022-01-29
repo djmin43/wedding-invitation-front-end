@@ -1,4 +1,4 @@
-export type BlogType = {
+export type PostType = {
   id: string
   name: string
   body: string
@@ -7,7 +7,7 @@ export type BlogType = {
   password: string
 }
 
-export const blogList: BlogType[] = [
+export const postList: PostType[] = [
   {
     id: 'some-id1',
     name: '이우혁',
