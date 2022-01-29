@@ -2,13 +2,14 @@ import React, { ChangeEvent, useState } from 'react'
 import Post from './Post'
 import { PostType } from '../../data/dummyBlogData'
 import * as S from '../../styles/global-styled'
+import { v4 as uuid } from 'uuid'
 
 type BlogMainProps = {
   postList: PostType[]
 }
 
 const Main = ({ postList }: BlogMainProps) => {
-  const [popsts, setPosts] = useState<PostType[]>(postList)
+  const [posts, setPosts] = useState<PostType[]>(postList)
 
   const [newPost, setNewPost] = useState<PostType>({
     id: '',
@@ -19,14 +20,16 @@ const Main = ({ postList }: BlogMainProps) => {
     password: '',
   })
 
-  const addNewCard = (newBlog: PostType) => {
-    const newState = [...popsts, newBlog]
+  const addNewCard = () => {
+    const newState = [...posts, newPost]
     setPosts(newState)
+    console.log(posts)
   }
 
   function handlePostInputChange(e: ChangeEvent<HTMLInputElement>) {
     const { name, value } = e.target
-    setNewPost({ ...newPost, [name]: value })
+    const id: string = uuid()
+    setNewPost({ ...newPost, id, [name]: value })
   }
 
   return (
@@ -61,7 +64,8 @@ const Main = ({ postList }: BlogMainProps) => {
       </div>
 
       {newPost.password}
-      {popsts.map((post: PostType) => (
+      <button onClick={() => addNewCard()}>add new post</button>
+      {posts.map((post: PostType) => (
         <div key={post.id}>
           <Post post={post} />
         </div>
