@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { BlogType } from '../data/dummyBlogData'
 import Navigation from '../components/layout/Navigation'
 import IntroMain from '../components/intro/IntroMain'
-import * as s from '../styles/global-styled'
+import * as S from '../styles/global-styled'
 import BlogMain from './blog/BlogMain'
 
 type AppProps = {
@@ -43,14 +43,14 @@ const App = ({ blogs }: AppProps) => {
         />
       </Head>
       {showNavBar && (
-        <s.NavigationWrapper>
+        <S.NavigationWrapper>
           <Navigation />
-        </s.NavigationWrapper>
+        </S.NavigationWrapper>
       )}
-      <s.Main>
+      <S.Main>
         <IntroMain />
         <BlogMain blogs={blogs} />
-      </s.Main>
+      </S.Main>
     </>
   )
 }

@@ -10,7 +10,7 @@ type BlogMainProps = {
 const BlogMain = ({ blogs }: BlogMainProps) => {
   return (
     <S.PageContainer>
-      <S.PageHeader>게시판</S.PageHeader>
+      <S.PageHeader>축하메세지</S.PageHeader>
       {blogs.map((blog: BlogType) => (
         <div key={blog.id}>
           <BlogCard blog={blog} />
