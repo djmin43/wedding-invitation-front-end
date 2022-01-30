@@ -1,5 +1,5 @@
 import React from 'react'
-import { PostType } from '../../data/dummyBlogData'
+import { PostType } from './Main'
 import * as S from '../../styles/global-styled/index'
 
 type PostProps = {
@@ -12,7 +12,7 @@ const Post = ({ post }: PostProps) => {
       <S.Avatar backgroundColor={post.avatarColor}>
         <span>{post.user}</span>
       </S.Avatar>
-      <p className="body">{post.body}</p>
+      <S.PostBody className="body">{post.body}</S.PostBody>
     </S.CardWrapper>
   )
 }

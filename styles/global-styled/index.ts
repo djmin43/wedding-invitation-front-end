@@ -115,6 +115,11 @@ export const Avatar = styled.div<AvatarStyeldProps>`
   white-space: nowrap;
 `
 
+export const PostBody = styled.p`
+  width: 100%;
+  margin-left: auto;
+`
+
 export const NewPostInput = styled.section`
   display: flex;
   justify-content: center;

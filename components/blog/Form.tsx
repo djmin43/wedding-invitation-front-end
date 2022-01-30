@@ -1,16 +1,16 @@
 import React, { ChangeEvent } from 'react'
 import * as S from '../../styles/global-styled/index'
-import { PostType } from '../../data/dummyBlogData'
+import { PostType } from './Main'
 
 type FormProps = {
   handlePostInputChange: (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void
   newPost: PostType
-  addNewCard: () => void
+  submitForm: () => void
 }
 
-const Form = ({ handlePostInputChange, newPost, addNewCard }: FormProps) => {
+const Form = ({ handlePostInputChange, newPost, submitForm }: FormProps) => {
   return (
     <S.NewPostInput>
       <div className="writer-name">
@@ -35,7 +35,7 @@ const Form = ({ handlePostInputChange, newPost, addNewCard }: FormProps) => {
         <p>* 이름은 1 - 4 글자로 작성해주세요!</p>
         <p>* 내용은 10글자 이상 부탁드립니다 :)</p>
       </div>
-      <button className="submit-button" onClick={() => addNewCard()}>
+      <button className="submit-button" onClick={() => submitForm()}>
         축하메세지 남기기
       </button>
     </S.NewPostInput>
