@@ -23,7 +23,7 @@ const Main = () => {
   }, [])
 
   const getResponse = async () => {
-    const result = await axios.get('http://localhost:80/blog')
+    const result = await axios.get('/blog')
     setPostList(result.data)
   }
 
@@ -32,7 +32,7 @@ const Main = () => {
       alert('폼을 올바르게 작성해주세요!')
       return
     }
-    await axios.post('http://localhost:80/blog', newPost, {
+    await axios.post('/blog', newPost, {
       headers: { 'Content-Type': 'text/plain' },
     })
     getResponse()
