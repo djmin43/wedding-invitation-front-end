@@ -126,7 +126,7 @@ export const Avatar = styled.div<AvatarStyeldProps>`
 
 export const PostBody = styled.p`
   width: 100%;
-  margin-left: auto;
+  margin-left: 0.5rem;
   font-family: 'Noto Sans KR', sans-serif;
 `
 
