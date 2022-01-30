@@ -41,8 +41,8 @@ const Main = () => {
   }
 
   const submitForm = () => {
-    if (!validateForm(newPost)) {
-      alert('폼을 올바르게 작성해주세요!')
+    if (newPost.user.length !== 2) {
+      alert('이름을 2글자로 작성해주세요!')
       return
     }
     setIsModalOpen(true)
@@ -51,13 +51,11 @@ const Main = () => {
   function handlePostInputChange(
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) {
-    const { value, name } = e.target
-    const id: string = uuid()
     setNewPost({
       ...newPost,
-      id,
+      id: uuid(),
       avatarColor: randomColorGenerator(),
-      [name]: value,
+      [e.target.name]: e.target.value,
     })
   }
 
@@ -75,6 +73,7 @@ const Main = () => {
         headers: { 'Content-Type': 'text/plain' },
       })
       setNewPost(initialNewPostValue)
+      setPassword('')
       getPostList()
       setIsModalOpen(false)
     }
@@ -109,17 +108,6 @@ const Main = () => {
 const randomColorGenerator = () => {
   const pastelValues = Object.values(palette.mui)
   return pastelValues[Math.floor(Math.random() * pastelValues.length)]
-}
-
-const validateForm = (newPost: PostType) => {
-  if (
-    newPost.user.length > 1 &&
-    newPost.user.length < 5 &&
-    newPost.body.length > 10
-  ) {
-    return true
-  }
-  return false
 }
 
 const initialNewPostValue = {

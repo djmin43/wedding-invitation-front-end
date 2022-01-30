@@ -21,7 +21,8 @@ const Form = ({ handlePostInputChange, newPost, submitForm }: FormProps) => {
           name="user"
           onChange={handlePostInputChange}
           autoFocus={false}
-          placeholder="이름은 1 - 4 글자로 작성해주세요!"
+          maxLength={2}
+          placeholder="이름은 2글자로만 작성해주세요! (이름 또는 이니셜)"
         />
       </div>
       <div className="body">
@@ -32,7 +33,6 @@ const Form = ({ handlePostInputChange, newPost, submitForm }: FormProps) => {
           name="body"
           onChange={handlePostInputChange}
           autoFocus={false}
-          placeholder="내용은 10글자 이상 부탁드립니다!"
         />
       </div>
       <S.BaseButton onClick={() => submitForm()}>
