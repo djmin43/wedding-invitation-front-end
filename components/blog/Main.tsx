@@ -22,29 +22,23 @@ const Main = () => {
   const [postList, setPostList] = useState<PostType[]>([])
 
   const [newPost, setNewPost] = useState<PostType>(initialNewPostValue)
+  const [password, setPassword] = useState<string>('')
+  const [isPasswordValid, setIsPasswordValid] = useState<boolean>(false)
 
   useEffect(() => {
     getPostList()
   }, [])
 
   useEffect(() => {
-    // FIXME: Needs to be refactored. Bad code.
-    if (newPost.password.length > 3) {
-      const addNewPost = async () => {
-        await axios.post('/blog', newPost, {
-          headers: { 'Content-Type': 'text/plain' },
-        })
-        setNewPost(initialNewPostValue)
-        getPostList()
-        setIsModalOpen(false)
-      }
-      addNewPost()
+    if (password.length === 4) {
+      setIsPasswordValid(true)
+      return
     }
-  }, [newPost, newPost.password])
+    setIsPasswordValid(false)
+  }, [password])
 
   const getPostList = async () => {
-    const result = await axios.get('/blog')
-    setPostList(result.data)
+    await axios.get('/blog').then((result) => setPostList(result.data))
   }
 
   const submitForm = () => {
@@ -69,11 +63,22 @@ const Main = () => {
   }
 
   function handlePasswordInput(e: ChangeEvent<HTMLInputElement>) {
-    const { value } = e.target
-    setNewPost({
-      ...newPost,
-      password: value,
-    })
+    setPassword(e.target.value)
+  }
+
+  const addNewPost = async () => {
+    if (isPasswordValid) {
+      const payload = {
+        ...newPost,
+        password,
+      }
+      await axios.post('/blog', payload, {
+        headers: { 'Content-Type': 'text/plain' },
+      })
+      setNewPost(initialNewPostValue)
+      getPostList()
+      setIsModalOpen(false)
+    }
   }
 
   return (
@@ -92,17 +97,20 @@ const Main = () => {
         ))}
       <Dialog open={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <div className={sampleModal}>
-          <span>비밀번호 4자리를 입력해주세요!</span>
+          <span>비밀번호 4자리를 입력해주세요</span>
           <input
             type="password"
             inputMode="numeric"
             name="password"
             maxLength={4}
             autoFocus
-            value={newPost.password}
+            value={password}
             onChange={handlePasswordInput}
             className={passwordInput}
           />
+          {isPasswordValid && (
+            <S.BaseButton onClick={addNewPost}>작성완료</S.BaseButton>
+          )}
         </div>
       </Dialog>
     </S.PageContainer>
@@ -110,7 +118,7 @@ const Main = () => {
 }
 
 const randomColorGenerator = () => {
-  const pastelValues = Object.values(palette.pastel)
+  const pastelValues = Object.values(palette.mui)
   return pastelValues[Math.floor(Math.random() * pastelValues.length)]
 }
 
@@ -136,14 +144,15 @@ const initialNewPostValue = {
 
 const sampleModal = css`
   background-color: #fff;
-  color: black;
   text-align: center;
+  padding: 1rem;
+  font-family: 'Noto Sans KR', sans-serif;
 `
 
 const passwordInput = css`
   height: 5%;
   width: 100%;
-  font-size: 1000%;
+  font-size: 500%;
   text-align: center;
   border: none;
   outline: none;

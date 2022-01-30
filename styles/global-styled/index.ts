@@ -14,6 +14,7 @@ export const CallButtons = styled.section`
   justify-content: center;
   gap: 1rem;
   margin-top: 1rem;
+  font-family: 'Noto Sans KR', sans-serif;
   & > div {
     padding: 0.5rem 1rem;
     box-shadow: ${palette.boxshadow};
@@ -22,12 +23,21 @@ export const CallButtons = styled.section`
   }
   & > .call-bride-container {
     color: ${palette.page};
-    background-color: ${palette.pastel.blue};
+    background-color: ${palette.mui.deepIndigo};
   }
   & > .call-groom-container {
     color: ${palette.page};
-    background-color: ${palette.pastel.purple};
+    background-color: ${palette.mui.deepIndigo};
   }
+`
+
+export const BaseButton = styled.button`
+  padding: 0.5rem 3rem;
+  box-shadow: ${palette.boxshadow};
+  background-color: ${palette.mui.deepIndigo};
+  color: #fff;
+  border: none;
+  font-family: 'Noto Sans KR', sans-serif;
 `
 
 export const PageContainer = styled.div`
@@ -67,7 +77,7 @@ export const NavigationContainer = styled.nav`
   text-align: center;
   width: 100%;
   height: 8vh;
-  background-color: #121858;
+  background-color: ${palette.mui.deepIndigo};
   color: ${palette.page};
 `
 
@@ -87,7 +97,7 @@ export const CardWrapper = styled.div`
   & > .body {
     font-size: 0.75rem;
     padding: 0.125rem;
-    font-weight: 600;
+    font-weight: 400;
   }
 `
 
@@ -102,31 +112,29 @@ export const Avatar = styled.div<AvatarStyeldProps>`
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.5);
   background-color: ${({ backgroundColor }) => backgroundColor};
-  box-shadow: ${palette.boxshadow};
   color: ${palette.page};
   font-size: 0.75rem;
-  font-weight: 200;
-  text-shadow: 1px 1px 1px ${palette.font.light};
+  font-weight: 400;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   overflow: hidden;
   white-space: nowrap;
+  font-family: 'Noto Sans KR', sans-serif;
 `
 
 export const PostBody = styled.p`
   width: 100%;
   margin-left: auto;
+  font-family: 'Noto Sans KR', sans-serif;
 `
 
 export const NewPostInput = styled.section`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  & > div {
-    margin: 0.25rem 0;
-  }
+  font-family: 'Noto Sans KR', sans-serif;
   & > .form-rules {
     font-size: 0.75rem;
     line-height: 0.25rem;
@@ -150,12 +158,5 @@ export const NewPostInput = styled.section`
       outline: none;
       box-shadow: ${palette.boxshadow};
     }
-  }
-  & > .submit-button {
-    border: none;
-    box-shadow: ${palette.boxshadow};
-    padding: 0.5rem;
-    font-family: 'Maruburi';
-    color: ${palette.font.main};
   }
 `

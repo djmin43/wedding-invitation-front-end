@@ -16,4 +16,17 @@ export const palette = {
     blue: '#A6C1EE',
     pink: '#FDCBF1',
   },
+  mui: {
+    orange: '#e53935',
+    red: '#d81b60',
+    purple: '#8e24aa',
+    hardPurple: '#5e35b1',
+    indigo: '#3949ab',
+    blue: '#1e88e5',
+    lightBlue: '#039be5',
+    teal: '#00897b',
+    green: '#43a047',
+    deepOrange: '#f4511e',
+    deepIndigo: '#273377',
+  },
 }

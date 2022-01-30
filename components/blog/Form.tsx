@@ -21,6 +21,7 @@ const Form = ({ handlePostInputChange, newPost, submitForm }: FormProps) => {
           name="user"
           onChange={handlePostInputChange}
           autoFocus={false}
+          placeholder="이름은 1 - 4 글자로 작성해주세요!"
         />
       </div>
       <div className="body">
@@ -31,15 +32,12 @@ const Form = ({ handlePostInputChange, newPost, submitForm }: FormProps) => {
           name="body"
           onChange={handlePostInputChange}
           autoFocus={false}
+          placeholder="내용은 10글자 이상 부탁드립니다!"
         />
       </div>
-      <div className="form-rules">
-        <p>* 이름은 1 - 4 글자로 작성해주세요!</p>
-        <p>* 내용은 10글자 이상 부탁드립니다 :)</p>
-      </div>
-      <button className="submit-button" onClick={() => submitForm()}>
+      <S.BaseButton onClick={() => submitForm()}>
         축하메세지 남기기
-      </button>
+      </S.BaseButton>
     </S.NewPostInput>
   )
 }
