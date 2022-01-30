@@ -18,7 +18,7 @@ const LocationAndTimeSection = styled.section`
 `
 
 const S = {
-  LocationAndTimeSection
+  LocationAndTimeSection,
 }
 
 export default LocationInformation

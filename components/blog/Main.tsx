@@ -1,39 +1,47 @@
-import React, { ChangeEvent, useState } from 'react'
+import React, { ChangeEvent, useEffect, useState } from 'react'
 import Post from './Post'
 import Form from './Form'
 import { PostType } from '../../data/dummyBlogData'
 import * as S from '../../styles/global-styled'
 import { v4 as uuid } from 'uuid'
 import { palette } from '../../styles/globalTheme'
+import axios from 'axios'
 
-type BlogMainProps = {
-  postList: PostType[]
-}
-
-const Main = ({ postList }: BlogMainProps) => {
-  const [posts, setPosts] = useState<PostType[]>(postList)
+const Main = () => {
+  const [postList, setPostList] = useState<PostType[]>([])
 
   const [newPost, setNewPost] = useState<PostType>({
     id: '',
-    writerName: '',
+    user: '',
     body: '',
     avatarColor: '',
     createdAt: '',
   })
 
-  const addNewCard = () => {
-    const newState = [...posts, newPost]
+  useEffect(() => {
+    getResponse()
+  }, [])
+
+  const getResponse = async () => {
+    const result = await axios.get('http://localhost:80/blog')
+    setPostList(result.data)
+  }
+
+  const addNewCard = async () => {
     if (!validateForm()) {
       alert('폼을 올바르게 작성해주세요!')
       return
     }
-    setPosts(newState)
+    await axios.post('http://localhost:80/blog', newPost, {
+      headers: { 'Content-Type': 'text/plain' },
+    })
+    getResponse()
   }
 
   function validateForm() {
     if (
-      newPost.writerName.length > 1 &&
-      newPost.writerName.length < 5 &&
+      newPost.user.length > 1 &&
+      newPost.user.length < 5 &&
       newPost.body.length > 10
     ) {
       return true
@@ -62,11 +70,12 @@ const Main = ({ postList }: BlogMainProps) => {
         newPost={newPost}
         addNewCard={addNewCard}
       />
-      {posts.map((post: PostType) => (
-        <div key={post.id}>
-          <Post post={post} />
-        </div>
-      ))}
+      {postList &&
+        postList.map((post: PostType) => (
+          <div key={post.id}>
+            <Post post={post} />
+          </div>
+        ))}
     </S.PageContainer>
   )
 }

@@ -17,8 +17,8 @@ const Form = ({ handlePostInputChange, newPost, addNewCard }: FormProps) => {
         <p>이름:</p>
         <input
           type="text"
-          value={newPost.writerName}
-          name="writerName"
+          value={newPost.user}
+          name="user"
           onChange={handlePostInputChange}
         />
       </div>

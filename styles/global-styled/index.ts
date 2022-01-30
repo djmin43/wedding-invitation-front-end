@@ -106,6 +106,7 @@ export const Avatar = styled.div<AvatarStyeldProps>`
   color: ${palette.page};
   font-size: 0.75rem;
   font-weight: 200;
+  text-shadow: 1px 1px 1px ${palette.font.light};
   display: flex;
   align-items: center;
   justify-content: center;

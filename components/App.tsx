@@ -1,16 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
-import { PostType } from '../data/dummyBlogData'
 import Navigation from '../components/layout/Navigation'
 import IntroMain from './intro/Main'
 import * as S from '../styles/global-styled'
 import PostMain from './blog/Main'
 
-type AppProps = {
-  postList: PostType[]
-}
-
-const App = ({ postList }: AppProps) => {
+const App = () => {
   const [showNavBar, setShowNavBar] = useState<boolean>(false)
 
   const handleScroll = () => {
@@ -49,7 +44,7 @@ const App = ({ postList }: AppProps) => {
       )}
       <S.Main>
         <IntroMain />
-        <PostMain postList={postList} />
+        <PostMain />
       </S.Main>
     </>
   )

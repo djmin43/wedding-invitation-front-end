@@ -10,7 +10,7 @@ const Post = ({ post }: PostProps) => {
   return (
     <S.CardWrapper>
       <S.Avatar backgroundColor={post.avatarColor}>
-        <span>{post.writerName}</span>
+        <span>{post.user}</span>
       </S.Avatar>
       <p className="body">{post.body}</p>
     </S.CardWrapper>
