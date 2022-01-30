@@ -160,3 +160,20 @@ export const NewPostInput = styled.section`
     }
   }
 `
+
+export const PasswordModalContainer = styled.div`
+  background-color: ${palette.page};
+  text-align: center;
+  padding: 1rem;
+  font-family: 'Noto Sans KR', sans-serif;
+`
+
+export const PasswordInput = styled.input`
+  height: 5%;
+  width: 100%;
+  font-size: 500%;
+  text-align: center;
+  border: none;
+  outline: none;
+  caret-color: transparent;
+`

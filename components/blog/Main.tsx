@@ -5,8 +5,7 @@ import * as S from '../../styles/global-styled'
 import { v4 as uuid } from 'uuid'
 import { palette } from '../../styles/globalTheme'
 import axios from 'axios'
-import Dialog from '@mui/material/Dialog'
-import { css } from '@emotion/css'
+import PasswordModal from '../common/modal/PasswordModal'
 
 export type PostType = {
   id: string
@@ -95,24 +94,14 @@ const Main = () => {
             <Post post={post} />
           </div>
         ))}
-      <Dialog open={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <div className={sampleModal}>
-          <span>비밀번호 4자리를 입력해주세요</span>
-          <input
-            type="password"
-            inputMode="numeric"
-            name="password"
-            maxLength={4}
-            autoFocus
-            value={password}
-            onChange={handlePasswordInput}
-            className={passwordInput}
-          />
-          {isPasswordValid && (
-            <S.BaseButton onClick={addNewPost}>작성완료</S.BaseButton>
-          )}
-        </div>
-      </Dialog>
+      <PasswordModal
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+        password={password}
+        handlePasswordInput={handlePasswordInput}
+        isPasswordValid={isPasswordValid}
+        handleSubmit={addNewPost}
+      />
     </S.PageContainer>
   )
 }
@@ -141,22 +130,5 @@ const initialNewPostValue = {
   createdAt: '',
   password: '',
 }
-
-const sampleModal = css`
-  background-color: #fff;
-  text-align: center;
-  padding: 1rem;
-  font-family: 'Noto Sans KR', sans-serif;
-`
-
-const passwordInput = css`
-  height: 5%;
-  width: 100%;
-  font-size: 500%;
-  text-align: center;
-  border: none;
-  outline: none;
-  caret-color: transparent;
-`
 
 export default Main
