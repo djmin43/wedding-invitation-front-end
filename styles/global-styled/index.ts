@@ -88,6 +88,13 @@ export const PageHeader = styled.h3`
   line-height: 0;
 `
 
+export const PageSubHeader = styled.h4`
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 0;
+`
+
 export const CardWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -107,8 +114,8 @@ type AvatarStyeldProps = {
 
 export const Avatar = styled.div<AvatarStyeldProps>`
   vertical-align: middle;
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.5);
   background-color: ${({ backgroundColor }) => backgroundColor};
@@ -176,4 +183,11 @@ export const PasswordInput = styled.input`
   border: none;
   outline: none;
   caret-color: transparent;
+`
+
+export const NoticeContainer = styled.section`
+  background-color: ${palette.pastel.skyBlue};
+  padding: 0.5rem;
+  font-family: 'Noto Sans KR', sans-serif;
+  line-height: 0.5;
 `

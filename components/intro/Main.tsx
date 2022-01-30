@@ -1,8 +1,8 @@
 import React from 'react'
-import MainImage from '../MainImage'
-import Letter from '../Letter'
+import MainImage from './MainImage'
+import Letter from './Letter'
 import Link from 'next/link'
-import LocationInformation from '../LocationInformation'
+import LocationInformation from './LocationInformation'
 import * as S from '../../styles/global-styled/index'
 
 const Main = () => {
