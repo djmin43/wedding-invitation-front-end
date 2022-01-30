@@ -23,6 +23,9 @@ const App = () => {
   return (
     <>
       <Head>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <Head>
         <title>한종윤 결혼식</title>
         <meta
           property="og:image"

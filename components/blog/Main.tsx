@@ -143,7 +143,7 @@ const sampleModal = css`
 const passwordInput = css`
   height: 5%;
   width: 100%;
-  font-size: 10rem;
+  font-size: 1000%;
   text-align: center;
   border: none;
   outline: none;

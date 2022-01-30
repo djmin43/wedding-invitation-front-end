@@ -20,6 +20,7 @@ const Form = ({ handlePostInputChange, newPost, submitForm }: FormProps) => {
           value={newPost.user}
           name="user"
           onChange={handlePostInputChange}
+          autoFocus={false}
         />
       </div>
       <div className="body">
@@ -29,6 +30,7 @@ const Form = ({ handlePostInputChange, newPost, submitForm }: FormProps) => {
           value={newPost.body}
           name="body"
           onChange={handlePostInputChange}
+          autoFocus={false}
         />
       </div>
       <div className="form-rules">
