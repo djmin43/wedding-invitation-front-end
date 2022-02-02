@@ -72,13 +72,14 @@ export const NavigationWrapper = styled.div`
 
 export const NavigationContainer = styled.nav`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
   width: 100%;
   height: 8vh;
-  background-color: ${palette.mui.deepIndigo};
-  color: ${palette.page};
+  background-color: #1fe0; 
+  color: ${palette.font.dark};
+  font-size: 1rem;
 `
 
 export const PageHeader = styled.h3`
@@ -92,7 +93,6 @@ export const PageSubHeader = styled.h4`
   text-align: center;
   font-size: 1rem;
   font-weight: 400;
-  line-height: 0;
 `
 
 export const CardWrapper = styled.div`

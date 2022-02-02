@@ -6,6 +6,7 @@ import * as S from '../styles/global-styled'
 import Blog from './blog/Main'
 import Notice from './notice/Main'
 import Money from './money/Main'
+import MainImage from './intro/MainImage'
 
 const App = () => {
   const [showNavBar, setShowNavBar] = useState<boolean>(false)
@@ -50,6 +51,7 @@ const App = () => {
           <Navigation />
         </S.NavigationWrapper>
       )}
+      <MainImage />
       <S.Main>
         <Intro />
         <Blog />
