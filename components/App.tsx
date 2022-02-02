@@ -51,7 +51,6 @@ const App = () => {
           <Navigation />
         </S.NavigationWrapper>
       )}
-      <MainImage />
       <S.Main>
         <Intro />
         <Blog />
