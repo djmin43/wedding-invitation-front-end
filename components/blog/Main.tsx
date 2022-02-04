@@ -5,7 +5,6 @@ import * as S from '../../styles/global-styled'
 import { v4 as uuid } from 'uuid'
 import { palette } from '../../styles/globalTheme'
 import axios from 'axios'
-import PasswordModal from '../common/modal/PasswordModal'
 
 export type PostType = {
   id: string
@@ -17,24 +16,13 @@ export type PostType = {
 }
 
 const Main = () => {
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
   const [postList, setPostList] = useState<PostType[]>([])
 
   const [newPost, setNewPost] = useState<PostType>(initialNewPostValue)
-  const [password, setPassword] = useState<string>('')
-  const [isPasswordValid, setIsPasswordValid] = useState<boolean>(false)
 
   useEffect(() => {
     getPostList()
   }, [])
-
-  useEffect(() => {
-    if (password.length === 4) {
-      setIsPasswordValid(true)
-      return
-    }
-    setIsPasswordValid(false)
-  }, [password])
 
   const getPostList = async () => {
     await axios.get('/blog').then((result) => setPostList(result.data))
@@ -45,7 +33,6 @@ const Main = () => {
       alert('이름을 2글자로 작성해주세요!')
       return
     }
-    setIsModalOpen(true)
   }
 
   function handlePostInputChange(
@@ -59,24 +46,15 @@ const Main = () => {
     })
   }
 
-  function handlePasswordInput(e: ChangeEvent<HTMLInputElement>) {
-    setPassword(e.target.value)
-  }
-
   const addNewPost = async () => {
-    if (isPasswordValid) {
-      const payload = {
-        ...newPost,
-        password,
-      }
-      await axios.post('/blog', payload, {
-        headers: { 'Content-Type': 'text/plain' },
-      })
-      setNewPost(initialNewPostValue)
-      setPassword('')
-      getPostList()
-      setIsModalOpen(false)
+    const payload = {
+      ...newPost,
     }
+    await axios.post('/blog', payload, {
+      headers: { 'Content-Type': 'text/plain' },
+    })
+    setNewPost(initialNewPostValue)
+    getPostList()
   }
 
   return (
@@ -93,14 +71,6 @@ const Main = () => {
             <Post post={post} />
           </div>
         ))}
-      <PasswordModal
-        isModalOpen={isModalOpen}
-        setIsModalOpen={setIsModalOpen}
-        password={password}
-        handlePasswordInput={handlePasswordInput}
-        isPasswordValid={isPasswordValid}
-        handleSubmit={addNewPost}
-      />
     </S.PageContainer>
   )
 }
