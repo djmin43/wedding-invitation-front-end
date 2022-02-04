@@ -2,7 +2,6 @@ import React, { ChangeEvent, useEffect, useState } from 'react'
 import Post from './Post'
 import Form from './Form'
 import * as S from '../../styles/global-styled'
-import { v4 as uuid } from 'uuid'
 import { palette } from '../../styles/globalTheme'
 import axios from 'axios'
 
@@ -12,13 +11,12 @@ export type PostType = {
   body: string
   avatarColor: string
   createdAt: string
-  password: string
 }
 
 const Main = () => {
   const [postList, setPostList] = useState<PostType[]>([])
 
-  const [newPost, setNewPost] = useState<PostType>(initialNewPostValue)
+  const [newPost, setNewPost] = useState<PostType>(emptyPostValue)
 
   useEffect(() => {
     getPostList()
@@ -40,7 +38,6 @@ const Main = () => {
   ) {
     setNewPost({
       ...newPost,
-      id: uuid(),
       avatarColor: randomColorGenerator(),
       [e.target.name]: e.target.value,
     })
@@ -50,10 +47,8 @@ const Main = () => {
   //   const payload = {
   //     ...newPost,
   //   }
-  //   await axios.post('/blog', payload, {
-  //     headers: { 'Content-Type': 'text/plain' },
-  //   })
-  //   setNewPost(initialNewPostValue)
+  //   await axios.post('/blog', payload)
+  //   setNewPost(emptyPostValue)
   //   getPostList()
   // }
 
@@ -80,7 +75,7 @@ const randomColorGenerator = () => {
   return pastelValues[Math.floor(Math.random() * pastelValues.length)]
 }
 
-const initialNewPostValue = {
+const emptyPostValue = {
   id: '',
   user: '',
   body: '',
