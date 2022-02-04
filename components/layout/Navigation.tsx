@@ -13,16 +13,7 @@ const Navigation = () => {
     <header>
       <S.NavigationContainer>
         <div>
-          <span onClick={() => handleRouter('/')}>Home</span>
-        </div>
-        <div>
-          <span onClick={() => handleRouter('/')}>Photo</span>
-        </div>
-        <div>
-          <span onClick={() => handleRouter('/')}>Map</span>
-        </div>
-        <div>
-          <span onClick={() => handleRouter('/')}>Message</span>
+          <span onClick={() => handleRouter('/')}></span>
         </div>
       </S.NavigationContainer>
     </header>
