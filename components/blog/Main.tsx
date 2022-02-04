@@ -46,16 +46,16 @@ const Main = () => {
     })
   }
 
-  const addNewPost = async () => {
-    const payload = {
-      ...newPost,
-    }
-    await axios.post('/blog', payload, {
-      headers: { 'Content-Type': 'text/plain' },
-    })
-    setNewPost(initialNewPostValue)
-    getPostList()
-  }
+  // const addNewPost = async () => {
+  //   const payload = {
+  //     ...newPost,
+  //   }
+  //   await axios.post('/blog', payload, {
+  //     headers: { 'Content-Type': 'text/plain' },
+  //   })
+  //   setNewPost(initialNewPostValue)
+  //   getPostList()
+  // }
 
   return (
     <S.PageContainer>
