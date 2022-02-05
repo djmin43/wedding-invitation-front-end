@@ -4,7 +4,7 @@ import * as S from '@styled'
 const GiftMoney = () => {
   return (
     <S.CardContainer>
-      <S.Header>감사의 말씀</S.Header>
+      <S.SubHeader>감사의 말씀</S.SubHeader>
     </S.CardContainer>
   )
 }

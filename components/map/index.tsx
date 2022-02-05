@@ -10,7 +10,7 @@ const Map = () => {
     const longitude = 126.97577996889999
     const church = new naver.maps.Map('church', {
       center: new naver.maps.LatLng(latitude, longitude),
-      zoom: 10,
+      zoom: 25,
       zoomControl: true,
     })
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -41,7 +41,7 @@ const Map = () => {
         <span>버 스:</span>
         <span>버스 시청앞, 덕수궁 정거장 하차 790, 799, 401, 402, 406</span>
       </section>
-      <div id="church" className={naverMapStyle}></div>
+      <div id="church" className={naverMapStyle} />
     </S.CardContainer>
   )
 }
@@ -56,6 +56,7 @@ const descriptionStyle = css`
 const naverMapStyle = css`
   width: 15rem;
   height: 15rem;
+  margin: 1rem 0;
 `
 
 export default Map

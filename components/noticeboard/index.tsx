@@ -4,7 +4,7 @@ import * as S from '@styled'
 const Noticeboard = () => {
   return (
     <S.CardContainer>
-      <S.Header>축하의 말씀</S.Header>
+      <S.SubHeader>축하의 말씀</S.SubHeader>
     </S.CardContainer>
   )
 }
