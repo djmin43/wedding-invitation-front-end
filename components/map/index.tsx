@@ -1,33 +1,32 @@
 import React, { useEffect } from 'react'
 import * as S from '@styled'
 import { css } from '@emotion/css'
-import Head from 'next/head'
+import Script from 'next/script'
 
 const Map = () => {
   useEffect(() => initMap(), [])
+
   const initMap = () => {
     const latitude = 37.56727934114503
     const longitude = 126.97577996889999
     const church = new naver.maps.Map('church', {
       center: new naver.maps.LatLng(latitude, longitude),
-      zoom: 25,
+      zoom: 20,
       zoomControl: true,
     })
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const churchMarker = new naver.maps.Marker({
       position: new naver.maps.LatLng(latitude, longitude),
       map: church,
     })
+    churchMarker.addListener('click', () => console.log('hello world'))
   }
   return (
     <S.CardContainer>
-      <Head>
-        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-        <script
-          type="text/javascript"
-          src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=pb78a7v6oa"
-        ></script>
-      </Head>
+      <Script
+        type="text/javascript"
+        src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=pb78a7v6oa"
+        strategy="beforeInteractive"
+      ></Script>
 
       <S.SubHeader>오시는 길</S.SubHeader>
       <section className={descriptionStyle}>
