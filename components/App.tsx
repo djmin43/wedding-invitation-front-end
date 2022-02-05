@@ -1,5 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
+import Landing from '@components/landing/index'
+import * as S from '@styled'
 
 const App = () => {
   // const handleScroll = () => {
@@ -15,7 +17,7 @@ const App = () => {
   // }, [])
 
   return (
-    <>
+    <S.App>
       <Head>
         <meta
           name="viewport"
@@ -37,7 +39,9 @@ const App = () => {
           key="invitation"
         />
       </Head>
-    </>
+      <Landing />
+      asdhjfkf
+    </S.App>
   )
 }
 
