@@ -29,6 +29,7 @@ const Map = () => {
       ></Script>
 
       <S.SubHeader>오시는 길</S.SubHeader>
+      <div id="church" className={naverMapStyle} />
       <section className={descriptionStyle}>
         <span>자가용:</span>
         <span>
@@ -40,7 +41,6 @@ const Map = () => {
         <span>버 스:</span>
         <span>버스 시청앞, 덕수궁 정거장 하차 790, 799, 401, 402, 406</span>
       </section>
-      <div id="church" className={naverMapStyle} />
     </S.CardContainer>
   )
 }
