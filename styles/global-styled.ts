@@ -59,6 +59,6 @@ export const CardContainer = styled.div`
   flex-direction: column;
   background-color: ${palette.card};
   box-shadow: ${palette.boxshadow};
-  padding: 1rem;
-  margin: 1rem 0;
+  padding: 1.5rem 0.5rem;
+  margin: 0.75rem 0;
 `
