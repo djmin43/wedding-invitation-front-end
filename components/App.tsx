@@ -1,6 +1,9 @@
 import React from 'react'
 import Head from 'next/head'
 import Landing from '@components/landing/index'
+import InvitationLetter from '@components/invitation-letter/index'
+import GiftMoney from '@components/gift-money'
+import Noticeboard from '@components/noticeboard'
 import * as S from '@styled'
 
 const App = () => {
@@ -40,7 +43,9 @@ const App = () => {
         />
       </Head>
       <Landing />
-      asdhjfkf
+      <InvitationLetter />
+      <GiftMoney />
+      <Noticeboard />
     </S.App>
   )
 }

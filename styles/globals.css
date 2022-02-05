@@ -43,7 +43,7 @@ body {
   font-family: 'Maruburi', 'Roboto';
   background-color: #fffef2;
   scroll-behavior: smooth;
-  line-height: 1.5;
+  line-height: 0.25;
   font-size: 1rem;
 }
 
