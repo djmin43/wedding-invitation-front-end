@@ -10,7 +10,7 @@ const Map = () => {
     const longitude = 126.97577996889999
     const church = new naver.maps.Map('church', {
       center: new naver.maps.LatLng(latitude, longitude),
-      zoom: 15,
+      zoom: 10,
       zoomControl: true,
     })
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
