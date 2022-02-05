@@ -1,27 +1,18 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Head from 'next/head'
-import Navigation from '../components/layout/Navigation'
-import Intro from './intro/Main'
-import * as S from '../styles/global-styled'
-import Blog from './blog/Main'
-import Notice from './notice/Main'
-import Money from './money/Main'
-import MainImage from './intro/MainImage'
 
 const App = () => {
-  const [showNavBar, setShowNavBar] = useState<boolean>(false)
+  // const handleScroll = () => {
+  //   const position = window.pageYOffset
+  //   position > 120 ? setShowNavBar(true) : setShowNavBar(false)
+  // }
 
-  const handleScroll = () => {
-    const position = window.pageYOffset
-    position > 120 ? setShowNavBar(true) : setShowNavBar(false)
-  }
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll, { passive: true })
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll)
+  //   }
+  // }, [])
 
   return (
     <>
@@ -46,17 +37,6 @@ const App = () => {
           key="invitation"
         />
       </Head>
-      {showNavBar && (
-        <S.NavigationWrapper>
-          <Navigation />
-        </S.NavigationWrapper>
-      )}
-      <S.Main>
-        <Intro />
-        <Blog />
-        <Notice />
-        <Money />
-      </S.Main>
     </>
   )
 }

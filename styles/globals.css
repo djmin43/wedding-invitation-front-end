@@ -3,14 +3,14 @@
 
 @font-face {
   font-family: 'Maruburi';
-  font-weight: 700;
+  font-weight: 600;
   src: url('/fonts/MaruBuriTTF/MaruBuri-Bold.ttf');
   unicode-range: U+AC00-D7AF;
 }
 
 @font-face {
   font-family: 'Maruburi';
-  font-weight: 600;
+  font-weight: 500;
   src: url('/fonts/MaruBuriTTF/MaruBuri-SemiBold.ttf');
   unicode-range: U+AC00-D7AF;
 }
@@ -43,6 +43,8 @@ body {
   font-family: 'Maruburi', 'Roboto';
   background-color: #fffef2;
   scroll-behavior: smooth;
+  line-height: 1.5;
+
 }
 
 a {
@@ -52,4 +54,13 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+input {
+  background: none;
+  border: none;
+}
+
+input:focus {
+  outline: none;
 }
