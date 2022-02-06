@@ -10,14 +10,11 @@ const ChurchMap = () => {
         <p>대한성고회 서울주교좌 성당</p>
         <p className={lightFontStyle}>서울특별시 중구 세종대로 21길 15</p>
       </div>
-
       <section className={descriptionStyle}>
         <div>
           <p>자가용</p>
-          <p>
-            주차 공간이 협소합니다. 주변 주차장 안내드립니다.
-            <p>하이파킹 코리아나호텔 주차장, 서울시청 신청사 주차장</p>
-          </p>
+          <p>주차 공간이 협소합니다. 주변 주차장 안내드립니다.</p>
+          <p>하이파킹 코리아나호텔 주차장, 서울시청 신청사 주차장</p>
         </div>
         <div>
           <p>지하철</p>
