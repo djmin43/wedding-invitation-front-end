@@ -26,16 +26,16 @@ export const palette = {
 }
 
 export const BigHeader = styled.h1`
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-weight: 400;
 `
 export const Header = styled.h2`
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: 400;
 `
 
 export const SubHeader = styled.h3`
-  font-size: 1.25rem;
+  font-size: 1.75rem;
   font-weight: 300;
 `
 
