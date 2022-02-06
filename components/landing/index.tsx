@@ -32,7 +32,7 @@ const textWrapperStyle = css`
 `
 
 const nameStyle = css`
-  margin: 1rem 0;
+  /* margin: 1rem 0; */
 `
 
 export default Landing

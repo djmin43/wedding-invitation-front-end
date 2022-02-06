@@ -60,6 +60,7 @@ export const LandingContainer = styled.section`
 `
 
 export const LandingImageWrapper = styled.div`
+  display: flex;
   box-shadow: ${palette.boxshadow};
 `
 

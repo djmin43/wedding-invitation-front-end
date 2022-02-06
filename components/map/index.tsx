@@ -34,7 +34,7 @@ const descriptionStyle = css`
   & > div {
     margin: 0.5rem 0;
     & > p:nth-of-type(1) {
-      font-weight: 400;
+      font-weight: 500;
     }
   }
 `
