@@ -25,12 +25,23 @@ export const palette = {
   },
 }
 
+export const BigHeader = styled.h1`
+  font-size: 1.75rem;
+  font-weight: 400;
+`
 export const Header = styled.h2`
   font-size: 1.5rem;
+  font-weight: 400;
 `
 
 export const SubHeader = styled.h3`
   font-size: 1.25rem;
+  font-weight: 300;
+`
+
+export const ParagraphWrapper = styled.div`
+  text-align: center;
+  margin: 0.75rem 0;
 `
 
 export const App = styled.main`
@@ -60,5 +71,5 @@ export const CardContainer = styled.div`
   background-color: ${palette.card};
   box-shadow: ${palette.boxshadow};
   padding: 1.5rem 0.5rem;
-  margin: 0.75rem 0;
+  margin: 0.25rem 0;
 `

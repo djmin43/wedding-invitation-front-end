@@ -11,13 +11,13 @@ const Landing = () => {
           src="https://mindongjoon.blob.core.windows.net/general/hj-pic.jpeg"
           alt="그림"
           layout="intrinsic"
-          width={161}
-          height={236}
+          width={121}
+          height={177}
         />
       </S.LandingImageWrapper>
+      <S.BigHeader className={nameStyle}>한종윤 이혜진</S.BigHeader>
       <div className={textWrapperStyle}>
-        <S.Header className={headerStyle}>한종윤 이혜진</S.Header>
-        <section className={locationStyle}>
+        <section>
           <p>2022년 3월 26일 토요일 오후 12시</p>
           <p>대한성공회 서울주교좌성당</p>
         </section>
@@ -28,15 +28,12 @@ const Landing = () => {
 
 const textWrapperStyle = css`
   text-align: center;
-  position: relative;
-  top: 0px;
+  font-weight: 400;
 `
 
-const headerStyle = css`
-  margin: 2rem;
+const nameStyle = css`
+  margin: 1rem 0;
 `
-
-const locationStyle = css``
 
 export default Landing
 

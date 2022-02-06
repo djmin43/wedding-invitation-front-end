@@ -4,6 +4,8 @@ import Landing from '@components/landing'
 import InvitationLetter from '@components/invitation-letter'
 import GiftMoney from '@components/gift-money'
 import Noticeboard from '@components/noticeboard'
+import BrideAndGroom from '@components/bride-and-groom'
+import Gallery from '@components/gallery'
 import Map from '@components/map'
 import * as S from '@styled'
 
@@ -45,9 +47,12 @@ const App = () => {
       </Head>
       <Landing />
       <InvitationLetter />
+      <BrideAndGroom />
+      <Gallery />
+      <Map />
+
       <GiftMoney />
       <Noticeboard />
-      <Map />
     </S.App>
   )
 }

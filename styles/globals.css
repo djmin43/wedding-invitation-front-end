@@ -43,8 +43,9 @@ body {
   font-family: 'Maruburi', 'Roboto';
   background-color: #fffef2;
   scroll-behavior: smooth;
-  line-height: 0.25;
-  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 0.75rem;
+  font-weight: 200;
 }
 
 a {
@@ -54,6 +55,8 @@ a {
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 input {
