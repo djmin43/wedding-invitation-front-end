@@ -14,22 +14,13 @@ const Gallery = () => {
       <S.SubHeader>갤러리</S.SubHeader>
       <Swiper
         className={swiperStyle}
-        slidesPerView={1}
         loop={true}
-        pagination={{
-          clickable: true,
-        }}
+        pagination={true}
         modules={[Pagination]}
       >
-        <SwiperSlide className={slideStyle}>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+        <SwiperSlide className={slideStyle}>한</SwiperSlide>
+        <SwiperSlide className={slideStyle}>종</SwiperSlide>
+        <SwiperSlide className={slideStyle}>윤</SwiperSlide>
       </Swiper>
     </S.CardContainer>
   )
@@ -41,7 +32,11 @@ const swiperStyle = css`
 `
 
 const slideStyle = css`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 25rem;
+  font-size: 3rem;
 `
 
 export default Gallery
