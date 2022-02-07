@@ -35,7 +35,7 @@ export const Header = styled.h2`
 `
 
 export const SubHeader = styled.h3`
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   font-weight: 300;
 `
 
@@ -70,7 +70,5 @@ export const CardContainer = styled.div`
   align-items: center;
   flex-direction: column;
   background-color: ${palette.card};
-  box-shadow: ${palette.boxshadow};
   padding: 1.5rem 0.5rem;
-  margin: 0.25rem 0;
 `
