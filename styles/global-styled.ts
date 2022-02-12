@@ -26,22 +26,35 @@ export const palette = {
 }
 
 export const BigHeader = styled.h1`
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 400;
 `
 export const Header = styled.h2`
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-weight: 400;
 `
 
 export const SubHeader = styled.h3`
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 300;
+`
+
+export const EnglishHeader = styled.h3`
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.25rem;
+  font-family: 'Maruburi';
+`
+
+export const SectionHeaderWrapper = styled.div`
+  text-align: center;
+  margin: 2.5rem 0;
 `
 
 export const ParagraphWrapper = styled.div`
   text-align: center;
-  margin: 0.75rem 0;
+  margin: 0.5rem 0;
+  font-size: 1rem;
 `
 
 export const App = styled.main`
@@ -53,22 +66,30 @@ export const LandingContainer = styled.section`
   width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  background-color: ${palette.card};
+  background-color: #fff;
 `
 
 export const LandingImageWrapper = styled.div`
   display: flex;
-  box-shadow: ${palette.boxshadow};
 `
 
-export const CardContainer = styled.div`
+export const YellowCardContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background-color: ${palette.card};
-  padding: 1.5rem 0.5rem;
+  padding: 2.5rem 0.5rem;
+`
+
+export const WhiteCardContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 2.5rem 0;
 `

@@ -50,9 +50,8 @@ const App = () => {
       <BrideAndGroom />
       <Gallery />
       <Map />
-
-      <GiftMoney />
       <Noticeboard />
+      <GiftMoney />
     </S.App>
   )
 }
